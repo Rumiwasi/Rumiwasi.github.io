@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumiwasi | Hospedaje en Natagaima, Tolima</title>
+    <meta name="description" content="Apartamentos amoblados y equipados en Natagaima, Tolima. Comodidad, aire acondicionado, Wi-Fi y cocina privada.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --cream: #FAF7F2; /* Light minimalist warm cream */
+            --cream-light: #FFFFFF; /* Pure white */
+            --stone-base: #EBE6DE; /* Natural light stone */
+            --stone-dark: #5A4237; /* Rich chocolate brown */
+            --stone-medium: #785A4C; /* Warm medium brown */
+            --stone-light: #A38274; /* Soft mocha brown */
+            --gold: #C5A059; /* Elegant gold */
+            --whatsapp: #25D366; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--stone-dark);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Loader */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cream);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 90px;
+            height: auto;
+            margin-bottom: 1rem;
+            animation: spin3d 2.2s ease-in-out infinite; /* Premium 3D rotation */
+        }
+
+        .loader-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.15em;
+            color: var(--stone-dark);
+        }
+
+        @keyframes spin3d {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        /* Floating Contacts */
+        .floating-contact-panel {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--cream-light);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(90, 66, 55, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(90, 66, 55, 0.22);
+        }
+
+        .float-btn.whatsapp {
+            background-color: var(--whatsapp);
+        }
+
+        .float-btn.email {
+            background-color: var(--stone-medium);
+        }
+
+        .float-btn.back-to-top {
+            background-color: var(--stone-dark);
+            font-size: 1.1rem;
+            width: 40px;
+            height: 40px;
+            align-self: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .float-btn.back-to-top.visible {
+            opacity: 0.85;
+            visibility: visible;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .navbar.scrolled {
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 0.9rem 2rem;
+            border-bottom: 1px solid rgba(90, 66, 55, 0.05);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .nav-logo img {
+            height: 38px;
+            width: auto;
+        }
+
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--stone-dark);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-menu-btn {
+            display: none;
+            font-size: 1.3rem;
+            color: var(--stone-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--cream);
+                box-shadow: -5px 0 20px rgba(90, 66, 55, 0.05);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1099;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-menu-btn {
+                display: block;
+                z-index: 1101;
+            }
+        }
+
+        /* Sections base */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: var(--stone-dark);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin: 1rem auto;
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--stone-medium);
+        }
+
+        /* Buttons */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--stone-dark);
+            color: var(--cream-light);
+            padding: 0.8rem 2.2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--gold);
+            color: var(--cream-light);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(90, 66, 55, 0.45), rgba(90, 66, 55, 0.45)),
+                        url('imagenes/fachada_entrada.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 3rem 2rem;
+            background: rgba(250, 247, 242, 0.96);
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(90, 66, 55, 0.15);
+            margin: 0 1rem;
+        }
+
+        .hero-logo {
+            width: 90px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: var(--stone-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--stone-medium);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.4;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: var(--cream-light);
+            font-size: 1.2rem;
+            animation: bounceScroll 2s infinite;
+        }
+
+        @keyframes bounceScroll {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-8px); }
+            60% { transform: translateX(-50%) translateY(-4px); }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--cream-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 800px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--stone-dark);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--stone-medium);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-feat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--stone-dark);
+        }
+
+        .about-feat-item i {
+            color: var(--gold);
+            font-size: 0.95rem;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            background-color: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(90, 66, 55, 0.05);
+        }
+
+        .about-image {
+            width: 100%;
+            height: 380px;
+            object-fit: contain; /* Full image visible, no cropping */
+            background-color: var(--cream);
+        }
+
+        /* Photo Gallery Section */
+        .gallery-section {
+            background-color: var(--cream);
+        }
+
+        .gallery-container {
+            background: var(--cream-light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(90, 66, 55, 0.03);
+            border: 1px solid rgba(184, 147, 85, 0.08);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--stone-base);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--stone-medium);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--stone-dark);
+            color: var(--cream);
+            border-color: var(--stone-dark);
+        }
+
+        .photo-viewer {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9; /* Fluid aspect ratio, no vertical stretching */
+            max-height: 480px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #F5EFE6; /* Elegant soft stone background matching photos */
+            border: 1px solid rgba(90, 66, 55, 0.05);
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .photo-viewer {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        .viewer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Full image fully visible without cutting off */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .viewer-image.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .viewer-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(90, 66, 55, 0.8));
+            padding: 2rem 1.5rem 1rem;
+            color: var(--cream-light);
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .caption-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .caption-text p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .viewer-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .nav-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(250, 247, 242, 0.3);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--cream-light);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .nav-arrow:hover {
+            background: var(--cream-light);
+            color: var(--stone-dark);
+        }
+
+        .thumbnails-container {
+            display: flex;
+            gap: 0.8rem;
+            overflow-x: auto;
+            padding: 0.4rem 0;
+            scrollbar-width: thin;
+        }
+
+        .thumbnail-item {
+            width: 80px;
+            height: 55px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Thumbnail preview grid is uniform */
+        }
+
+        .thumbnail-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(90, 66, 55, 0.35);
+        }
+
+        .thumbnail-item.active, .thumbnail-item:hover {
+            border-color: var(--gold);
+        }
+
+        .thumbnail-item.active::before, .thumbnail-item:hover::before {
+            opacity: 0;
+        }
+
+        /* Space Comfort Cards */
+        .comfort-section {
+            background-color: var(--cream-light);
+        }
+
+        .comfort-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .comfort-card {
+            background: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(90, 66, 55, 0.04);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .comfort-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(90, 66, 55, 0.04);
+            border-color: var(--gold);
+        }
+
+        .comfort-image {
+            height: 200px;
+            background-color: #F5EFE6;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comfort-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Full space preview, no cutting off */
+        }
+
+        .comfort-card-body {
+            padding: 1.5rem;
+        }
+
+        .comfort-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .comfort-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--stone-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .comfort-card-desc {
+            color: var(--stone-medium);
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .comfort-link {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--stone-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .comfort-card:hover .comfort-link {
+            color: var(--gold);
+        }
+
+        /* Detail Modals */
+        .details-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(90, 66, 55, 0.7);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .details-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: var(--cream);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 20px 50px rgba(90, 66, 55, 0.2);
+            border: 1px solid var(--gold);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .modal-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .details-modal.active .modal-box {
+            transform: scale(1);
+        }
+
+        /* Fixed Close Button relative to screen so it never scrolls away */
+        .modal-close-btn {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--stone-dark);
+            color: var(--cream-light);
+            border: 2px solid var(--cream);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            z-index: 2100;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--gold);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .modal-close-btn {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        .modal-visual {
+            height: 100%;
+            min-height: 300px;
+            background-color: #F5EFE6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Full image visible in modal details */
+        }
+
+        .modal-content-panel {
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--stone-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .modal-description {
+            color: var(--stone-medium);
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .modal-amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-badge {
+            background: rgba(184, 147, 85, 0.1);
+            color: var(--stone-dark);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--cream);
+        }
+
+        .reviews-container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .review-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .review-slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .review-stars {
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--stone-dark);
+            line-height: 1.4;
+            margin-bottom: 1.2rem;
+        }
+
+        .review-author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--stone-light);
+        }
+
+        .review-source {
+            font-size: 0.7rem;
+            color: var(--stone-base);
+            margin-top: 0.2rem;
+        }
+
+        .reviews-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .reviews-dots {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--stone-base);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background-color: var(--gold);
+            width: 15px;
+            border-radius: 4px;
+        }
+
+        /* Map and Location */
+        .map-section {
+            background-color: var(--cream-light);
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 800px) {
+            .map-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .map-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--stone-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .map-details {
+            margin: 1.5rem 0;
+        }
+
+        .map-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .map-detail-item i {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+        }
+
+        .map-detail-item h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--stone-dark);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .map-detail-item p {
+            color: var(--stone-medium);
+            font-size: 0.85rem;
+        }
+
+        .map-wrapper {
+            position: relative;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(90, 66, 55, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Booking Form */
+        .contact-section {
+            background-color: var(--cream);
+        }
+
+        .contact-box {
+            background: var(--cream-light);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(90, 66, 55, 0.02);
+            border: 1px solid rgba(184, 147, 85, 0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 600px) {
+            .contact-box {
+                padding: 2rem 1.2rem;
+            }
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 600px) {
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--stone-medium);
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--stone-base);
+            background-color: var(--cream);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--stone-dark);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--gold);
+            outline: none;
+            background-color: var(--cream-light);
+        }
+
+        .form-submit-container {
+            grid-column: span 2;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .form-submit-container {
+                grid-column: span 1;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--stone-dark);
+            color: var(--cream);
+            padding: 4rem 0 2.5rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .footer-logo-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cream-light);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-logo-column p {
+            color: rgba(250, 247, 242, 0.65);
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .footer-socials a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.04);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--cream-light);
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.9rem;
+        }
+
+        .footer-socials a:hover {
+            background-color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .footer-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cream-light);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            color: rgba(250, 247, 242, 0.65);
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: rgba(250, 247, 242, 0.45);
+        }
+
+        /* Toast */
+        .toast-notification {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--stone-dark);
+            color: var(--cream-light);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(90, 66, 55, 0.2);
+            border-left: 3px solid var(--gold);
+            z-index: 2000;
+            transform: translateY(150%);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .toast-notification.active {
+            transform: translateY(0);
+        }
+
+        .toast-notification i {
+            color: var(--gold);
+        }
+
+        /* Mobile specific style overwrites */
+        @media (max-width: 600px) {
+            section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
+            }
+
+            /* Hero on mobile layout fix */
+            .hero {
+                height: 100vh;
+                min-height: 520px;
+                padding: 5rem 1rem 2rem;
+            }
+
+            .hero-content {
+                width: 100%;
+                margin: 0;
+                padding: 2.2rem 1.2rem;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.15rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .about-image {
+                height: 260px;
+            }
+
+            .floating-contact-panel {
+                bottom: 1.5rem;
+                right: 1.2rem;
+                gap: 0.6rem;
+            }
+
+            .float-btn {
+                width: 46px;
+                height: 46px;
+                font-size: 1.25rem;
+            }
+
+            .float-btn.back-to-top {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+            }
+
+            .gallery-container {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .nav-arrow {
+                width: 34px;
+                height: 34px;
+                font-size: 0.85rem;
+            }
+
+            /* Horizontally scrollable filters without wrapping */
+            .gallery-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 0.5rem 0.2rem;
+                width: 100%;
+                scrollbar-width: none;
+                flex-wrap: nowrap;
+            }
+
+            .gallery-filters::-webkit-scrollbar {
+                display: none;
+            }
+
+            .filter-btn {
+                flex-shrink: 0;
+            }
+
+            /* Single full-width column for booking form */
+            .contact-form {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .form-submit-container {
+                grid-column: span 1;
+            }
+
+            /* Footer bottom stack */
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <img src="imagenes/logo.png" alt="Rumiwasi Logo" class="loader-logo">
+            <div class="loader-text">RUMIWASI</div>
+        </div>
+    </div>
+
+    <!-- Floating Contacts -->
+    <div class="floating-contact-panel">
+        <button class="float-btn back-to-top" id="backToTop" aria-label="Volver arriba">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <a href="mailto:hotelrumiwasi@gmail.com?subject=Consulta%20de%20Hospedaje" class="float-btn email" aria-label="Enviar Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/573102095438?text=Hola,%20quisiera%20consultar%20disponibilidad%20en%20Rumiwasi" target="_blank" class="float-btn whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <img src="imagenes/logo.png" alt="Rumiwasi Logo">
+            <span class="nav-brand">Rumiwasi</span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#gallery">Galería</a></li>
+            <li><a href="#spaces">Espacios</a></li>
+            <li><a href="#reviews">Opiniones</a></li>
+            <li><a href="#location">Ubicación</a></li>
+            <li><a href="#booking">Reservas</a></li>
+        </ul>
+
+        <div class="nav-menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content reveal">
+            <img src="imagenes/logo.png" alt="Rumiwasi Logo" class="hero-logo">
+            <p class="hero-subtitle">Apartamentos Amoblados</p>
+            <h1 class="hero-title">Rumiwasi</h1>
+            <p class="hero-tagline">Tu hogar en Natagaima, Tolima</p>
+            <a href="#booking" class="cta-btn">Reservar ahora</a>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about reveal" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="section-label">Bienvenidos</p>
+                    <h2 class="section-title">Estadía Cómoda e Independiente</h2>
+                    <div class="section-divider" style="margin-left: 0;"></div>
+                    <p>En <strong>Rumiwasi</strong> ofrecemos apartamentos amoblados y totalmente equipados en Natagaima, Tolima. Diseñados para brindar privacidad, comodidad y total autonomía a turistas o profesionales en estadías cortas y largas.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feat-item">
+                            <i class="fas fa-check"></i> Cocina Completa
+                        </div>
+                        <div class="about-feat-item">
+                            <i class="fas fa-check"></i> Aire Conectado
+                        </div>
+                        <div class="about-feat-item">
+                            <i class="fas fa-check"></i> Conexión Wi-Fi
+                        </div>
+                        <div class="about-feat-item">
+                            <i class="fas fa-check"></i> Lavadora Privada
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image-wrapper">
+                    <img src="imagenes/fachada_entrada.jpg" alt="Entrada Rumiwasi" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section reveal" id="gallery">
+        <div class="container">
+            <!-- Removed 'Visor de Fotos' title and paragraph subtitle -->
+            <div class="section-header">
+                <p class="section-label">Instalaciones</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="rooms">Habitaciones</button>
+                    <button class="filter-btn" data-filter="kitchen">Cocina & Comedor</button>
+                    <button class="filter-btn" data-filter="exterior">Exteriores</button>
+                </div>
+
+                <!-- Main Photo Display -->
+                <div class="photo-viewer">
+                    <div class="viewer-nav">
+                        <button class="nav-arrow" id="prevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-arrow" id="nextBtn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+
+                    <!-- Images with contain fitting (removed advertisement logo banner, perfil, portada, bano) -->
+                    <img src="imagenes/fachada_entrada.jpg" class="viewer-image active" data-category="exterior" data-title="Fachada Entrada" data-desc="Acceso principal al edificio en Natagaima." alt="Fachada del hotel">
+                    <img src="imagenes/sala_balcon.jpg" class="viewer-image" data-category="rooms" data-title="Sala y Balcón" data-desc="Espacio social con buena ventilación y balcón." alt="Sala con balcón">
+                    <img src="imagenes/habitacion_1.jpg" class="viewer-image" data-category="rooms" data-title="Habitación Principal" data-desc="Cama confortable y ambiente climatizado." alt="Habitación principal">
+                    <img src="imagenes/habitacion_escritorio.jpg" class="viewer-image" data-category="rooms" data-title="Área de Escritorio" data-desc="Zona de trabajo e iluminación óptima." alt="Habitación con escritorio">
+                    <img src="imagenes/cocina_general.jpg" class="viewer-image" data-category="kitchen" data-title="Cocina General" data-desc="Equipada con nevera y gabinetes." alt="Cocina">
+                    <img src="imagenes/cocina_barra.jpg" class="viewer-image" data-category="kitchen" data-title="Barra Comedor" data-desc="Barra integrada al área de cocina." alt="Cocina con barra">
+                    <img src="imagenes/cocina_estufa.jpg" class="viewer-image" data-category="kitchen" data-title="Estufa y Menaje" data-desc="Estufa a gas lista para preparar comidas." alt="Estufa a gas">
+
+                    <div class="viewer-caption">
+                        <div class="caption-text">
+                            <h3 id="captionTitle">Fachada Entrada</h3>
+                            <p id="captionDesc">Acceso principal al edificio en Natagaima.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thumbnails Scrollbar -->
+                <div class="thumbnails-container" id="thumbnailsContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spaces Section -->
+    <section class="comfort-section reveal" id="spaces">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Distribución</p>
+                <h2 class="section-title">Nuestros Espacios</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Apartamentos diseñados para garantizar comodidad e independencia total.</p>
+            </div>
+
+            <div class="comfort-grid">
+                <!-- Card 1 -->
+                <div class="comfort-card" onclick="openDetailsModal('rooms')">
+                    <div class="comfort-image">
+                        <img src="imagenes/habitacion_1.jpg" alt="Dormitorio">
+                    </div>
+                    <div class="comfort-card-body">
+                        <span class="comfort-tag">Descanso</span>
+                        <h3 class="comfort-card-title">Habitaciones Climatizadas</h3>
+                        <p class="comfort-card-desc">Camas confortables, aire acondicionado, televisión y Wi-Fi para tu tranquilidad.</p>
+                        <span class="comfort-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="comfort-card" onclick="openDetailsModal('kitchen')">
+                    <div class="comfort-image">
+                        <img src="imagenes/cocina_general.jpg" alt="Cocina">
+                    </div>
+                    <div class="comfort-card-body">
+                        <span class="comfort-tag">Autonomía</span>
+                        <h3 class="comfort-card-title">Cocina y Barra Comedor</h3>
+                        <p class="comfort-card-desc">Equipada con estufa, nevera grande y utensilios básicos para preparar tus comidas.</p>
+                        <span class="comfort-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="comfort-card" onclick="openDetailsModal('living')">
+                    <div class="comfort-image">
+                        <img src="imagenes/sala_balcon.jpg" alt="Sala de estar">
+                    </div>
+                    <div class="comfort-card-body">
+                        <span class="comfort-tag">Confort</span>
+                        <h3 class="comfort-card-title">Sala de Estar & Balcón</h3>
+                        <p class="comfort-card-desc">Área social cómoda, acceso a balcón exterior y lavadora privada dentro del apartamento.</p>
+                        <span class="comfort-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Modals -->
+    <div class="details-modal" id="detailsModal" onclick="closeDetailsModal(event)">
+        <!-- Fixed Close Button placed inside modal container so it never scrolls away -->
+        <button class="modal-close-btn" onclick="triggerCloseModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <div class="modal-box">
+            <div class="modal-visual">
+                <img id="modalVisualImg" src="imagenes/habitacion_1.jpg" alt="Visualización">
+            </div>
+            <div class="modal-content-panel">
+                <span class="modal-category" id="modalCategoryLabel">Categoría</span>
+                <h2 class="modal-title" id="modalTitleText">Título del Espacio</h2>
+                <p class="modal-description" id="modalDescText">Descripción breve.</p>
+                <div class="modal-amenities" id="modalBadgesContainer"></div>
+                <a href="#booking" class="cta-btn" style="align-self: flex-start;" onclick="triggerCloseModal()">Reservar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="testimonials reveal" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Reseñas</p>
+                <h2 class="section-title">Comentarios Destacados</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="reviews-container">
+                <!-- Slide 1 -->
+                <div class="review-slide active">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="review-text">
+                        "Excelente servicio, los apartamentos muy limpios y cómodos. Cuentan con todo lo necesario para sentirse como en casa."
+                    </blockquote>
+                    <p class="review-author">Huésped Satisfecho</p>
+                    <p class="review-source">Google Maps</p>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="review-slide">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="review-text">
+                        "Muy buena ubicación. El aire acondicionado funciona perfecto y la cocina completa facilita mucho la estadía."
+                    </blockquote>
+                    <p class="review-author">Viajero Familiar</p>
+                    <p class="review-source">Google Maps</p>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="review-slide">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="review-text">
+                        "Lugar ideal para estancias largas. Contar con cocina equipada y lavadora privada es una gran ventaja."
+                    </blockquote>
+                    <p class="review-author">Cliente Corporativo</p>
+                    <p class="review-source">Google Maps</p>
+                </div>
+            </div>
+
+            <div class="reviews-nav">
+                <div class="reviews-dots" id="reviewsDots">
+                    <span class="dot active" onclick="setReview(0)"></span>
+                    <span class="dot" onclick="setReview(1)"></span>
+                    <span class="dot" onclick="setReview(2)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="map-section reveal" id="location">
+        <div class="container">
+            <div class="map-grid">
+                <div class="map-info">
+                    <p class="section-label">Ubicación</p>
+                    <h2 class="section-title">¿Dónde encontrarnos?</h2>
+                    <div class="section-divider" style="margin-left: 0;"></div>
+                    <p>Ubicados centralmente en Natagaima, Tolima, con acceso rápido a comercios y transporte.</p>
+                    
+                    <div class="map-details">
+                        <div class="map-detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Carrera 2 Número 3-47, Natagaima, Tolima, Colombia</p>
+                            </div>
+                        </div>
+
+                        <div class="map-detail-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Teléfonos</h4>
+                                <p>+57 317 498 1988 (Recepción)<br>+57 310 209 5438 (Reservas)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=Hotel%20Rum%C3%AD%20Wasi,%20Natagaima,%20Tolima&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" title="Mapa Rumiwasi"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Form -->
+    <section class="contact-section reveal" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Reservas</p>
+                <h2 class="section-title">Consulta Disponibilidad</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="contact-box">
+                <form class="contact-form" id="bookingForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">Nombre Completo</label>
+                        <input type="text" id="fullName" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNum">WhatsApp</label>
+                        <input type="tel" id="phoneNum" placeholder="Ej: +57 300 123 4567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkIn">Fecha de Check-In</label>
+                        <input type="date" id="checkIn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkOut">Fecha de Check-Out</label>
+                        <input type="date" id="checkOut" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Huéspedes</label>
+                        <select id="guests">
+                            <option value="1">1 Persona</option>
+                            <option value="2" selected>2 Personas</option>
+                            <option value="3">3 Personas</option>
+                            <option value="4">4 Personas</option>
+                            <option value="5+">5+ Personas</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddr">Correo Electrónico</label>
+                        <input type="email" id="emailAddr" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Mensaje Adicional</label>
+                        <textarea id="message" rows="3" placeholder="Peticiones especiales..."></textarea>
+                    </div>
+
+                    <div class="form-submit-container">
+                        <button type="submit" class="cta-btn">Enviar consulta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo-column">
+                    <h3>Rumiwasi</h3>
+                    <p>Apartamentos completamente amoblados diseñados para el confort, privacidad y autonomía en Natagaima, Tolima.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/people/Hotel-Rumi-Wasi/61569095871140/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/573102095438" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:hotelrumiwasi@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Secciones</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#spaces">Espacios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#reviews">Opiniones</a></li>
+                        <li><a href="#location">Ubicación</a></li>
+                        <li><a href="#booking">Reservas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Rumiwasi. Todos los derechos reservados.</p>
+                <p>Natagaima, Tolima, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Solicitud recibida. Redirigiendo a WhatsApp...</span>
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                // Ensure hero content becomes visible immediately on load
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) heroContent.classList.add('visible');
+            }, 600);
+        });
+
+        // Safety timeout
+        setTimeout(() => {
+            const loader = document.querySelector('.loader');
+            if (loader) loader.classList.add('hidden');
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) heroContent.classList.add('visible');
+        }, 3000);
+
+        // Navbar scrolled status
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.querySelector('i').classList.toggle('fa-bars');
+            menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Photo Gallery logic
+        const galleryImages = Array.from(document.querySelectorAll('.viewer-image'));
+        const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const captionTitle = document.getElementById('captionTitle');
+        const captionDesc = document.getElementById('captionDesc');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        let currentFilteredImages = [...galleryImages];
+        let currentIndex = 0;
+
+        function renderThumbnails(filteredImages) {
+            thumbnailsContainer.innerHTML = '';
+            filteredImages.forEach((img, idx) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = `thumbnail-item ${idx === currentIndex ? 'active' : ''}`;
+                thumbnail.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+                thumbnail.addEventListener('click', () => {
+                    setActiveImage(idx);
+                });
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+        }
+
+        function setActiveImage(index) {
+            galleryImages.forEach(img => img.classList.remove('active'));
+            
+            currentIndex = index;
+            const activeImg = currentFilteredImages[currentIndex];
+            activeImg.classList.add('active');
+
+            captionTitle.textContent = activeImg.dataset.title;
+            captionDesc.textContent = activeImg.dataset.desc;
+
+            const thumbs = thumbnailsContainer.querySelectorAll('.thumbnail-item');
+            thumbs.forEach((t, i) => {
+                if (i === currentIndex) {
+                    t.classList.add('active');
+                    t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    t.classList.remove('active');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            let nextIdx = currentIndex - 1;
+            if (nextIdx < 0) nextIdx = currentFilteredImages.length - 1;
+            setActiveImage(nextIdx);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            let nextIdx = currentIndex + 1;
+            if (nextIdx >= currentFilteredImages.length) nextIdx = 0;
+            setActiveImage(nextIdx);
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                if (filter === 'all') {
+                    currentFilteredImages = [...galleryImages];
+                } else {
+                    currentFilteredImages = galleryImages.filter(img => img.dataset.category === filter);
+                }
+
+                currentIndex = 0;
+                renderThumbnails(currentFilteredImages);
+                setActiveImage(0);
+            });
+        });
+
+        // Initialize thumbnails
+        renderThumbnails(currentFilteredImages);
+        setActiveImage(0);
+
+
+        // Spaces Modals
+        const modalData = {
+            rooms: {
+                category: 'Privacidad y Descanso',
+                title: 'Habitaciones Climatizadas',
+                desc: 'Nuestras habitaciones cuentan con aire acondicionado silencioso, camas confortables, armarios amplios, escritorio y TV inteligente. Diseñadas para tu descanso absoluto en Natagaima.',
+                badges: ['Aire Acondicionado', 'Cama Confort', 'Smart TV', 'Escritorio', 'Wi-Fi'],
+                visual: 'imagenes/habitacion_1.jpg'
+            },
+            kitchen: {
+                category: 'Autonomía y Comodidad',
+                title: 'Cocina & Barra Comedor',
+                desc: 'Equipadas con estufa a gas, refrigerador, vajilla, utensilios básicos y barra moderna. Ideales para estancias largas o si prefieres preparar tus propias comidas.',
+                badges: ['Estufa a Gas', 'Refrigerador', 'Menaje Completo', 'Barra Moderna'],
+                visual: 'imagenes/cocina_general.jpg'
+            },
+            living: {
+                category: 'Confort Familiar',
+                title: 'Sala de Estar & Balcón',
+                desc: 'Sala con buena ventilación, acceso a balcón exterior para disfrutar del fresco de la tarde, y zona de lavadora privada dentro del apartamento para tu máxima comodidad.',
+                badges: ['Sofá Cómodo', 'Acceso a Balcón', 'Lavadora Privada', 'Luz Natural'],
+                visual: 'imagenes/sala_balcon.jpg'
+            }
+        };
+
+        const detailsModal = document.getElementById('detailsModal');
+        const modalVisualImg = document.getElementById('modalVisualImg');
+        const modalCategoryLabel = document.getElementById('modalCategoryLabel');
+        const modalTitleText = document.getElementById('modalTitleText');
+        const modalDescText = document.getElementById('modalDescText');
+        const modalBadgesContainer = document.getElementById('modalBadgesContainer');
+
+        function openDetailsModal(key) {
+            const data = modalData[key];
+            if (data) {
+                modalVisualImg.src = data.visual;
+                modalCategoryLabel.textContent = data.category;
+                modalTitleText.textContent = data.title;
+                modalDescText.textContent = data.desc;
+                
+                modalBadgesContainer.innerHTML = data.badges.map(b => `<span class="modal-badge">${b}</span>`).join('');
+                
+                detailsModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function triggerCloseModal() {
+            detailsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeDetailsModal(e) {
+            if (e.target === detailsModal) triggerCloseModal();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && detailsModal.classList.contains('active')) triggerCloseModal();
+        });
+
+
+        // Testimonial Slider
+        const reviewSlides = document.querySelectorAll('.review-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentReviewIdx = 0;
+        let reviewInterval;
+
+        function setReview(idx) {
+            reviewSlides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+
+            currentReviewIdx = idx;
+            reviewSlides[currentReviewIdx].classList.add('active');
+            dots[currentReviewIdx].classList.add('active');
+        }
+
+        function startReviewTimer() {
+            clearInterval(reviewInterval);
+            reviewInterval = setInterval(() => {
+                let next = currentReviewIdx + 1;
+                if (next >= reviewSlides.length) next = 0;
+                setReview(next);
+            }, 6000);
+        }
+
+        startReviewTimer();
+
+
+        // Scroll reveal animation observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+
+        // Form Booking submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const phoneNum = document.getElementById('phoneNum').value;
+            const checkIn = document.getElementById('checkIn').value;
+            const checkOut = document.getElementById('checkOut').value;
+            const guests = document.getElementById('guests').value;
+            const emailAddr = document.getElementById('emailAddr').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappText = `¡Hola! Quisiera consultar disponibilidad en *Rumiwasi*:\n\n` + 
+                                 `- *Nombre*: ${fullName}\n` +
+                                 `- *WhatsApp*: ${phoneNum}\n` +
+                                 `- *Correo*: ${emailAddr}\n` +
+                                 `- *Check-In*: ${checkIn}\n` +
+                                 `- *Check-Out*: ${checkOut}\n` +
+                                 `- *Huéspedes*: ${guests}\n` +
+                                 `- *Mensaje*: ${message}`;
+
+            const encodedText = encodeURIComponent(whatsappText);
+            const whatsappUrl = `https://wa.me/573102095438?text=${encodedText}`;
+
+            const toast = document.getElementById('toast');
+            toast.classList.add('active');
+
+            setTimeout(() => {
+                toast.classList.remove('active');
+                window.open(whatsappUrl, '_blank');
+                document.getElementById('bookingForm').reset();
+            }, 1800);
+        }
+    </script>
+</body>
+</html>
